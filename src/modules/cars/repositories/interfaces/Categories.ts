@@ -1,9 +1,9 @@
-import { Category } from '../../model/Category';
+import { Category } from '../../entities/Category';
 
 export interface Categories {
-  findByName(name: string): boolean;
-  list(): Category[];
-  create({ name, description }: CreateCategoryDTO): void;
+  findByName(name: string): Promise<boolean>;
+  list(): Promise<Category[]>;
+  create({ name, description }: CreateCategoryDTO): Promise<void>;
 }
 
 export interface CreateCategoryDTO {

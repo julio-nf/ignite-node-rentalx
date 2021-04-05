@@ -29,8 +29,8 @@ export class ImportCategoryUseCase {
     categories.forEach(async (category) => {
       const { name, description } = category;
 
-      if (!this.categoriesRepository.findByName(name)) {
-        this.categoriesRepository.create({ name, description });
+      if (!(await this.categoriesRepository.findByName(name))) {
+        await this.categoriesRepository.create({ name, description });
       }
     });
   }
