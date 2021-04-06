@@ -1,3 +1,5 @@
+import { inject, injectable } from 'tsyringe';
+
 import { Categories } from '../../repositories/interfaces/Categories';
 
 interface CreateCategoryRequest {
@@ -5,8 +7,12 @@ interface CreateCategoryRequest {
   description: string;
 }
 
+@injectable()
 export class CreateCategoryUseCase {
-  constructor(private categoriesRepository: Categories) {}
+  constructor(
+    @inject('CategoriesRepository')
+    private categoriesRepository: Categories
+  ) {}
 
   async execute({ name, description }: CreateCategoryRequest) {
     if (await this.categoriesRepository.findByName(name)) {

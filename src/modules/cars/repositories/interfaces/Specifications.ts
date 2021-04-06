@@ -1,6 +1,6 @@
 export interface Specifications {
-  create({ name, description }: SpecificationsDTO): void;
-  findByName(name: string): boolean;
+  create({ name, description }: SpecificationsDTO): Promise<void>;
+  findByName(name: string): Promise<boolean>;
 }
 
 export interface SpecificationsDTO {

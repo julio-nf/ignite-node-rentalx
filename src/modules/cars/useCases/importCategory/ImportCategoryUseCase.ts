@@ -1,12 +1,16 @@
 /* eslint-disable class-methods-use-this */
 import fs from 'fs';
 import csvParser from 'csv-parser';
+import { inject, injectable } from 'tsyringe';
 
-import { CategoriesRepository } from '../../repositories/CategoriesRepository';
-import { CreateCategoryDTO } from '../../repositories/interfaces/Categories';
+import { Categories, CreateCategoryDTO } from '../../repositories/interfaces/Categories';
 
+@injectable()
 export class ImportCategoryUseCase {
-  constructor(private categoriesRepository: CategoriesRepository) {}
+  constructor(
+    @inject('CategoriesRepository')
+    private categoriesRepository: Categories
+  ) {}
 
   loadCategories(file: Express.Multer.File): Promise<CreateCategoryDTO[]> {
     return new Promise((resolve, reject) => {

@@ -1,13 +1,18 @@
+import { inject, injectable } from 'tsyringe';
 import { Specifications, SpecificationsDTO } from '../../repositories/interfaces/Specifications';
 
+@injectable()
 export class CreateSpecificationUseCase {
-  constructor(private specificationRepository: Specifications) {}
+  constructor(
+    @inject('SpecificationsRepository')
+    private specificationRepository: Specifications
+  ) {}
 
-  execute({ name, description }: SpecificationsDTO): void {
-    if (this.specificationRepository.findByName(name)) {
+  async execute({ name, description }: SpecificationsDTO) {
+    if (await this.specificationRepository.findByName(name)) {
       throw new Error('Specification already exists.');
     }
 
-    this.specificationRepository.create({ name, description });
+    await this.specificationRepository.create({ name, description });
   }
 }
