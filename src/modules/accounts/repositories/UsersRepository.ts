@@ -11,12 +11,14 @@ export class UsersRepository implements Users {
     this.repository = getRepository(User);
   }
 
-  async create({ name, email, driverLicense, password }: CreateUserDTO): Promise<void> {
+  async create({ name, email, driverLicense, password, avatar, id }: CreateUserDTO): Promise<void> {
     const user = this.repository.create({
       name,
       email,
       driverLicense,
       password,
+      avatar,
+      id,
     });
 
     await this.repository.save(user);

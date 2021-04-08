@@ -21,6 +21,9 @@ export class User {
   @Column({ type: 'boolean', default: 'false' })
   isAdmin!: boolean;
 
+  @Column({ nullable: true })
+  avatar!: string;
+
   @CreateDateColumn()
   createdAt!: Date;
 
