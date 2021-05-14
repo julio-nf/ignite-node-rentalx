@@ -1,8 +1,9 @@
 import bcrypt from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
-import { AppError } from '../../../../errors/AppError';
-import { CreateUserDTO } from '../../dtos/CreateUserDTO';
-import { Users } from '../../repositories/interfaces/Users';
+
+import { AppError } from '@errors/AppError';
+import { CreateUserDTO } from '@modules/accounts/dtos/CreateUserDTO';
+import { Users } from '@modules/accounts/repositories/interfaces/Users';
 
 @injectable()
 export class CreateUserUseCase {

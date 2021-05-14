@@ -1,9 +1,9 @@
 /* eslint-disable class-methods-use-this */
-import fs from 'fs';
 import csvParser from 'csv-parser';
+import fs from 'fs';
 import { inject, injectable } from 'tsyringe';
 
-import { Categories, CreateCategoryDTO } from '../../repositories/interfaces/Categories';
+import { Categories, CreateCategoryDTO } from '@modules/cars/repositories/interfaces/Categories';
 
 @injectable()
 export class ImportCategoryUseCase {

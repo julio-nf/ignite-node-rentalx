@@ -1,6 +1,10 @@
 import { getRepository, Repository } from 'typeorm';
+
 import { Specification } from '../entities/Specification';
-import { Specifications, SpecificationsDTO } from './interfaces/Specifications';
+import {
+  Specifications,
+  SpecificationsDTO,
+} from '@modules/cars/repositories/interfaces/Specifications';
 
 export class SpecificationsRepository implements Specifications {
   private repository: Repository<Specification>;

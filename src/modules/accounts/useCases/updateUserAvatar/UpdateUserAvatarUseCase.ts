@@ -1,6 +1,7 @@
 import { inject, injectable } from 'tsyringe';
-import { deleteFile } from '../../../../utils/files';
-import { Users } from '../../repositories/interfaces/Users';
+
+import { Users } from '@modules/accounts/repositories/interfaces/Users';
+import { deleteFile } from '@utils/files';
 
 interface UpdateAvatar {
   userId: string;

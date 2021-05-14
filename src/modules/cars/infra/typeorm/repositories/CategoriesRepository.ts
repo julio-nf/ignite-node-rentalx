@@ -1,6 +1,7 @@
 import { getRepository, Repository } from 'typeorm';
+
 import { Category } from '../entities/Category';
-import { Categories, CreateCategoryDTO } from './interfaces/Categories';
+import { Categories, CreateCategoryDTO } from '@modules/cars/repositories/interfaces/Categories';
 
 export class CategoriesRepository implements Categories {
   private repository: Repository<Category>;
@@ -18,7 +19,7 @@ export class CategoriesRepository implements Categories {
   // }
 
   async list() {
-    return await this.repository.find();
+    return this.repository.find();
   }
 
   async findByName(name: string) {

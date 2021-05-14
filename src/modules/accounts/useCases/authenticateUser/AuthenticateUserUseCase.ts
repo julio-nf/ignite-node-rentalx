@@ -1,9 +1,9 @@
 import bcrypt from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';
-import { AppError } from '../../../../errors/AppError';
 
-import { Users } from '../../repositories/interfaces/Users';
+import { AppError } from '@errors/AppError';
+import { Users } from '@modules/accounts/repositories/interfaces/Users';
 
 interface AuthenticateUser {
   email: string;

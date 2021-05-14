@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 
-import { Categories } from '../../repositories/interfaces/Categories';
+import { Categories } from '@modules/cars/repositories/interfaces/Categories';
 
 @injectable()
 export class ListCategoriesUseCase {
@@ -10,6 +10,6 @@ export class ListCategoriesUseCase {
   ) {}
 
   async execute() {
-    return await this.categoriesRepository.list();
+    return this.categoriesRepository.list();
   }
 }

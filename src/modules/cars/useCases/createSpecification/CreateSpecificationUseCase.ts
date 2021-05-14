@@ -1,6 +1,10 @@
 import { inject, injectable } from 'tsyringe';
-import { AppError } from '../../../../errors/AppError';
-import { Specifications, SpecificationsDTO } from '../../repositories/interfaces/Specifications';
+
+import { AppError } from '@errors/AppError';
+import {
+  Specifications,
+  SpecificationsDTO,
+} from '@modules/cars/repositories/interfaces/Specifications';
 
 @injectable()
 export class CreateSpecificationUseCase {

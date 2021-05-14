@@ -10,8 +10,11 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
   "rules": {
+    "class-methods-use-this": "off",
+    "no-throw-literal": "off",
+    "@typescript-eslint/no-throw-literal": ["off"],
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
@@ -19,6 +22,15 @@
       {
         "js": "never",
         "ts": "never"
+      }
+    ],
+    "import/order": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": ["module", ["/^@/", "parent", "sibling", "index"]],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ]
   }

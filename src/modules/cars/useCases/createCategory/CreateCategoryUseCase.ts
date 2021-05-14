@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe';
-import { AppError } from '../../../../errors/AppError';
 
-import { Categories } from '../../repositories/interfaces/Categories';
+import { AppError } from '@errors/AppError';
+import { Categories } from '@modules/cars/repositories/interfaces/Categories';
 
 interface CreateCategoryRequest {
   name: string;
