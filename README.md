@@ -1,8 +1,7 @@
 # Rentx
 
 Uma API para aluguel de carros, criado durante o Bootcamp Ignite de Node.js da Rocketseat, ministrado pela professora Daniele Evangelista.
-<br/>
-<br/>
+
 
 # Requisitos da aplicação
 
