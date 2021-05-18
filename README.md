@@ -3,9 +3,9 @@
 Uma API para aluguel de carros, criado durante o Bootcamp Ignite de Node.js da Rocketseat, ministrado pela professora Daniele Evangelista.
 
 
-# Requisitos da aplicação
+## Requisitos da aplicação
 
-## Cadastro de carro
+### Cadastro de carro
 
 - **Requisitos funcionais:**
 
@@ -18,7 +18,7 @@ Uma API para aluguel de carros, criado durante o Bootcamp Ignite de Node.js da R
   - O carro deve ser cadastrado, por padrão, com disponibilidade;
   - O usuário responsável pelo cadastro deve ser um usuário administrador.
 
-## Listagem de carros
+### Listagem de carros
 
 - **Requisitos funcionais:**
 
@@ -30,7 +30,7 @@ Uma API para aluguel de carros, criado durante o Bootcamp Ignite de Node.js da R
 - **Regras de negócio:**
   - O usuário não precisa estar logado no sistema.
 
-## Cadastro de especificação no carro
+### Cadastro de especificação no carro
 
 - **Requisitos funcionais:**
 
@@ -43,7 +43,7 @@ Uma API para aluguel de carros, criado durante o Bootcamp Ignite de Node.js da R
   - Não deve ser possível cadastrar uma especificação já existente para o carro.
   - O usuário responsável pelo cadastro deve ser um usuário administrador.
 
-## Cadastro de imagens do carro
+### Cadastro de imagens do carro
 
 - **Requisitos funcionais:**
 
@@ -58,7 +58,7 @@ Uma API para aluguel de carros, criado durante o Bootcamp Ignite de Node.js da R
   - O usuário deve poder cadastrar mais de uma imagem para o mesmo carro;
   - O usuário responsável pelo cadastro deve ser um usuário administrador.
 
-## Aluguel de carro
+### Aluguel de carro
 
 - **Requisitos funcionais:**
 
