@@ -12,7 +12,7 @@ export class Category {
   @Column()
   description!: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
 
   constructor() {

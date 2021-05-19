@@ -15,16 +15,16 @@ export class User {
   @Column()
   email!: string;
 
-  @Column()
+  @Column({ name: 'driver_license' })
   driverLicense!: string;
 
-  @Column({ type: 'boolean', default: 'false' })
+  @Column({ name: 'is_admin', type: 'boolean', default: 'false' })
   isAdmin!: boolean;
 
   @Column({ nullable: true })
   avatar!: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
 
   constructor() {
