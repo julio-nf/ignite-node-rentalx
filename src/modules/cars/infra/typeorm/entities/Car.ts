@@ -49,6 +49,7 @@ export class Car {
   constructor() {
     if (!this.id) {
       this.id = uuid();
+      this.available = true;
     }
   }
 }

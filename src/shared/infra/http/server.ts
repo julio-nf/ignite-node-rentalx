@@ -1,4 +1,6 @@
-import express, { json, Request, Response } from 'express';
+import 'reflect-metadata';
+
+import express, { json, NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from 'swagger.json';
@@ -9,6 +11,7 @@ import { router } from '@shared/infra/http/routes';
 import createConnection from '@shared/infra/typeorm';
 
 createConnection();
+
 const app = express();
 
 app.use(json());
@@ -17,17 +20,19 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(router);
 
-app.use((err: Error, req: Request, res: Response) => {
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   if (err instanceof AppError) {
-    return res.status(err.statusCode).json({
+    res.status(err.statusCode).json({
       message: err.message,
+    });
+  } else {
+    res.status(500).json({
+      status: 'error',
+      message: `Internal Server Error - ${err.message}`,
     });
   }
 
-  return res.status(500).json({
-    status: 'error',
-    message: `Internal Server Error - ${err.message}`,
-  });
+  next(err);
 });
 
 app.listen(3333, () => console.log('Server is running!'));
