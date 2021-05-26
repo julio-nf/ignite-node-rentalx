@@ -37,18 +37,17 @@ export class CarsRepositoryInMemory implements Cars {
 
   async findAvailable(name?: string, brand?: string, categoryId?: string): Promise<Car[]> {
     return this.cars.filter((car) => {
-      if (car.available) {
-        if (
-          (name && car.name === name) ||
-          (brand && car.brand === brand) ||
-          (categoryId && car.categoryId === categoryId)
-        ) {
+      if (!car.available) return null;
+
+      if (name || brand || categoryId) {
+        if (car.name === name || car.brand === brand || car.categoryId === categoryId) {
           return car;
         }
+
         return null;
       }
 
-      return null;
+      return car;
     });
   }
 }
