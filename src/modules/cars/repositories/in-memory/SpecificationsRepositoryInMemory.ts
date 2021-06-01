@@ -1,8 +1,8 @@
-import { Specifications } from '../interfaces/Specifications';
+import { SpecificationRepository } from '../interfaces/SpecificationRepository';
 import { SpecificationsDTO } from '@modules/cars/dtos/CreateSpecificationDTO';
 import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
 
-export class SpecificationsRepositoryInMemory implements Specifications {
+export class SpecificationsRepositoryInMemory implements SpecificationRepository {
   specifications: Specification[] = [];
 
   async create({ name, description }: SpecificationsDTO): Promise<Specification> {

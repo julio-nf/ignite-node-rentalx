@@ -1,7 +1,8 @@
-import { Categories, CreateCategoryDTO } from '../interfaces/Categories';
+import { CategoryRepository } from '../interfaces/CategoryRepository';
+import { CreateCategoryDTO } from '@modules/cars/dtos/CreateCategoryDTO';
 import { Category } from '@modules/cars/infra/typeorm/entities/Category';
 
-export class CategoriesRepositoryInMemory implements Categories {
+export class CategoriesRepositoryInMemory implements CategoryRepository {
   categories: Category[] = [];
 
   async findByName(name: string): Promise<boolean> {

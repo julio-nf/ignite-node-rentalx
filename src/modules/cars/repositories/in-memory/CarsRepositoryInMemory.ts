@@ -1,8 +1,8 @@
-import { Cars } from '../interfaces/Cars';
+import { CarRepository } from '../interfaces/CarRepository';
 import { CreateCarDTO } from '@modules/cars/dtos/CreateCarDTO';
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 
-export class CarsRepositoryInMemory implements Cars {
+export class CarsRepositoryInMemory implements CarRepository {
   cars: Car[] = [];
 
   async create({

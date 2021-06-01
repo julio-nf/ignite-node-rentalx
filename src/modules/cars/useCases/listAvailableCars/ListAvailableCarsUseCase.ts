@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
-import { Cars } from '@modules/cars/repositories/interfaces/Cars';
+import { CarRepository } from '@modules/cars/repositories/interfaces/CarRepository';
 
 interface ListAvailableCarsRequest {
   name?: string;
@@ -13,7 +13,7 @@ interface ListAvailableCarsRequest {
 export class ListAvailableCarsUseCase {
   constructor(
     @inject('CarsRepository')
-    private carsRepository: Cars
+    private carsRepository: CarRepository
   ) {}
 
   async execute({ name, brand, categoryId }: ListAvailableCarsRequest): Promise<Car[]> {

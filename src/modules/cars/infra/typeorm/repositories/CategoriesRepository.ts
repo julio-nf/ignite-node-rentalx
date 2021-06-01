@@ -1,9 +1,10 @@
 import { getRepository, Repository } from 'typeorm';
 
 import { Category } from '../entities/Category';
-import { Categories, CreateCategoryDTO } from '@modules/cars/repositories/interfaces/Categories';
+import { CreateCategoryDTO } from '@modules/cars/dtos/CreateCategoryDTO';
+import { CategoryRepository } from '@modules/cars/repositories/interfaces/CategoryRepository';
 
-export class CategoriesRepository implements Categories {
+export class CategoriesRepository implements CategoryRepository {
   private repository: Repository<Category>;
 
   constructor() {

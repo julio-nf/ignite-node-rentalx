@@ -2,8 +2,8 @@ import { inject, injectable } from 'tsyringe';
 
 import { AppError } from '@errors/AppError';
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
-import { Cars } from '@modules/cars/repositories/interfaces/Cars';
-import { Specifications } from '@modules/cars/repositories/interfaces/Specifications';
+import { CarRepository } from '@modules/cars/repositories/interfaces/CarRepository';
+import { SpecificationRepository } from '@modules/cars/repositories/interfaces/SpecificationRepository';
 
 interface CreateCarSpecificationRequest {
   carId: string;
@@ -14,9 +14,9 @@ interface CreateCarSpecificationRequest {
 export class CreateCarSpecificationUseCase {
   constructor(
     @inject('CarsRepository')
-    private carsRepository: Cars,
+    private carsRepository: CarRepository,
     @inject('SpecificationsRepository')
-    private specificationsRepository: Specifications
+    private specificationsRepository: SpecificationRepository
   ) {}
 
   async execute({ carId, specificationsId }: CreateCarSpecificationRequest): Promise<Car> {

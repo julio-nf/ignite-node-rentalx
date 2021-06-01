@@ -2,9 +2,9 @@ import { getRepository, Repository } from 'typeorm';
 
 import { Car } from '../entities/Car';
 import { CreateCarDTO } from '@modules/cars/dtos/CreateCarDTO';
-import { Cars } from '@modules/cars/repositories/interfaces/Cars';
+import { CarRepository } from '@modules/cars/repositories/interfaces/CarRepository';
 
-export class CarsRepository implements Cars {
+export class CarsRepository implements CarRepository {
   private repository: Repository<Car>;
 
   constructor() {

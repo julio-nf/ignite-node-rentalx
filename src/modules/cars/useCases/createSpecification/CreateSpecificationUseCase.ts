@@ -2,13 +2,13 @@ import { inject, injectable } from 'tsyringe';
 
 import { AppError } from '@errors/AppError';
 import { SpecificationsDTO } from '@modules/cars/dtos/CreateSpecificationDTO';
-import { Specifications } from '@modules/cars/repositories/interfaces/Specifications';
+import { SpecificationRepository } from '@modules/cars/repositories/interfaces/SpecificationRepository';
 
 @injectable()
 export class CreateSpecificationUseCase {
   constructor(
     @inject('SpecificationsRepository')
-    private specificationRepository: Specifications
+    private specificationRepository: SpecificationRepository
   ) {}
 
   async execute({ name, description }: SpecificationsDTO) {

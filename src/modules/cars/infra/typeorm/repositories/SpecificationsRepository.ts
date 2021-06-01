@@ -2,9 +2,9 @@ import { getRepository, Repository } from 'typeorm';
 
 import { Specification } from '../entities/Specification';
 import { SpecificationsDTO } from '@modules/cars/dtos/CreateSpecificationDTO';
-import { Specifications } from '@modules/cars/repositories/interfaces/Specifications';
+import { SpecificationRepository } from '@modules/cars/repositories/interfaces/SpecificationRepository';
 
-export class SpecificationsRepository implements Specifications {
+export class SpecificationsRepository implements SpecificationRepository {
   private repository: Repository<Specification>;
 
   constructor() {

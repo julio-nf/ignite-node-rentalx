@@ -5,18 +5,21 @@ import { Users } from '@modules/accounts/repositories/interfaces/Users';
 import { CarsRepository } from '@modules/cars/infra/typeorm/repositories/CarsRepository';
 import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositories/CategoriesRepository';
 import { SpecificationsRepository } from '@modules/cars/infra/typeorm/repositories/SpecificationsRepository';
-import { Cars } from '@modules/cars/repositories/interfaces/Cars';
-import { Categories } from '@modules/cars/repositories/interfaces/Categories';
-import { Specifications } from '@modules/cars/repositories/interfaces/Specifications';
+import { CarRepository } from '@modules/cars/repositories/interfaces/CarRepository';
+import { CategoryRepository } from '@modules/cars/repositories/interfaces/CategoryRepository';
+import { SpecificationRepository } from '@modules/cars/repositories/interfaces/SpecificationRepository';
 
 // Categories
-container.registerSingleton<Categories>('CategoriesRepository', CategoriesRepository);
+container.registerSingleton<CategoryRepository>('CategoriesRepository', CategoriesRepository);
 
 // Specification
-container.registerSingleton<Specifications>('SpecificationsRepository', SpecificationsRepository);
+container.registerSingleton<SpecificationRepository>(
+  'SpecificationsRepository',
+  SpecificationsRepository
+);
 
 // Users
 container.registerSingleton<Users>('UsersRepository', UsersRepository);
 
 // Cars
-container.registerSingleton<Cars>('CarsRepository', CarsRepository);
+container.registerSingleton<CarRepository>('CarsRepository', CarsRepository);

@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
 import { AppError } from '@errors/AppError';
-import { Categories } from '@modules/cars/repositories/interfaces/Categories';
+import { CategoryRepository } from '@modules/cars/repositories/interfaces/CategoryRepository';
 
 interface CreateCategoryRequest {
   name: string;
@@ -12,7 +12,7 @@ interface CreateCategoryRequest {
 export class CreateCategoryUseCase {
   constructor(
     @inject('CategoriesRepository')
-    private categoriesRepository: Categories
+    private categoriesRepository: CategoryRepository
   ) {}
 
   async execute({ name, description }: CreateCategoryRequest) {

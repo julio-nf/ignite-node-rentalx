@@ -1,12 +1,12 @@
 import { inject, injectable } from 'tsyringe';
 
-import { Categories } from '@modules/cars/repositories/interfaces/Categories';
+import { CategoryRepository } from '@modules/cars/repositories/interfaces/CategoryRepository';
 
 @injectable()
 export class ListCategoriesUseCase {
   constructor(
     @inject('CategoriesRepository')
-    private categoriesRepository: Categories
+    private categoriesRepository: CategoryRepository
   ) {}
 
   async execute() {

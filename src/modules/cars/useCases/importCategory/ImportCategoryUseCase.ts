@@ -3,13 +3,14 @@ import csvParser from 'csv-parser';
 import fs from 'fs';
 import { inject, injectable } from 'tsyringe';
 
-import { Categories, CreateCategoryDTO } from '@modules/cars/repositories/interfaces/Categories';
+import { CreateCategoryDTO } from '@modules/cars/dtos/CreateCategoryDTO';
+import { CategoryRepository } from '@modules/cars/repositories/interfaces/CategoryRepository';
 
 @injectable()
 export class ImportCategoryUseCase {
   constructor(
     @inject('CategoriesRepository')
-    private categoriesRepository: Categories
+    private categoriesRepository: CategoryRepository
   ) {}
 
   loadCategories(file: Express.Multer.File): Promise<CreateCategoryDTO[]> {
