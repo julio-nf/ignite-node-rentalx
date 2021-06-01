@@ -5,4 +5,5 @@ export interface Cars {
   create(data: CreateCarDTO): Promise<Car>;
   findByLicensePlate(licensePlate: string): Promise<Car | undefined>;
   findAvailable(name?: string, brand?: string, categoryId?: string): Promise<Car[]>;
+  findById(carId: string): Promise<Car | undefined>;
 }

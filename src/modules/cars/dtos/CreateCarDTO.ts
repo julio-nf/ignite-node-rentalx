@@ -1,4 +1,7 @@
+import { Specification } from '../infra/typeorm/entities/Specification';
+
 export interface CreateCarDTO {
+  id?: string;
   name: string;
   description: string;
   dailyRate: number;
@@ -6,4 +9,5 @@ export interface CreateCarDTO {
   fineAmount: number;
   brand: string;
   categoryId: string;
+  specifications?: Specification[];
 }
